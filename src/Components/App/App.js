@@ -8,11 +8,11 @@ import styles from "./App.module.css";
 
 const App = ({ contactList, getContacts }) => {
   useEffect(() => {
-    getContacts(JSON.parse(localStorage.getItem("contacts")));
+    getContacts && getContacts(JSON.parse(localStorage.getItem("contacts")));
   }, [getContacts]);
 
   useEffect(() => {
-    contactList.length &&
+    contactList &&
       localStorage.setItem("contacts", JSON.stringify(contactList));
   }, [contactList]);
 

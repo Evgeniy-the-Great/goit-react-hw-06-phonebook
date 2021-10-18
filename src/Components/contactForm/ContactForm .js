@@ -72,12 +72,12 @@ const ContactForm = ({ addContact, contactList }) => {
   );
 };
 
-const mapDispatchToProps = {
-  addContact,
-};
-
 const mapStateToProps = (state) => ({
   contactList: state.contacts.items,
 });
+
+const mapDispatchToProps = {
+  addContact,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

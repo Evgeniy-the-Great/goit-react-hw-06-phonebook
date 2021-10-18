@@ -11,9 +11,11 @@ const ContactList = ({ contactList, contactFilter, deleteContact }) => {
   };
 
   const findContact = () =>
-    contactList.filter((contact) =>
-      contact.name.toLowerCase().includes(contactFilter.toLowerCase())
-    );
+    contactList.filter((contact) => {
+      console.log(contact.name);
+      console.log(contactFilter);
+      return contact.name.toLowerCase().includes(contactFilter.toLowerCase());
+    });
 
   return (
     <ul className={style.contactList}>
@@ -32,7 +34,6 @@ const ContactList = ({ contactList, contactFilter, deleteContact }) => {
 };
 
 ContactList.propTypes = {
-  findContact: PropTypes.func.isRequired,
   deleteContact: PropTypes.func.isRequired,
 };
 
